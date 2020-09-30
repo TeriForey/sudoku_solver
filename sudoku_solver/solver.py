@@ -1,5 +1,4 @@
-"""Main module."""
-
+import copy
 
 def find_empty(bo):
     for i in range(len(bo)):
@@ -50,3 +49,8 @@ def solve(bo):
             bo[row][col] = 0
 
     return False
+
+
+def is_solvable(bo):
+    copied = copy.deepcopy(bo)
+    return solve(copied)
